@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <h1 class="fade-in">🏥 Hospital Management System</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('patients') }}" class="slide-in">Patients</a></li>
+                <li><a href="{{ url_for('doctors') }}" class="slide-in">Doctors</a></li>
+                <li><a href="{{ url_for('appointments') }}" class="slide-in">Appointments</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

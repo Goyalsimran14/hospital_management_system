@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Edit Patient</h2>
+<form method="POST">
+    <input type="text" name="name" value="{{ patient['name'] }}" required>
+    <input type="number" name="age" value="{{ patient['age'] }}">
+    <select name="gender">
+        <option value="">Select Gender</option>
+        <option value="Male" {% if patient['gender'] == 'Male' %}selected{% endif %}>Male</option>
+        <option value="Female" {% if patient['gender'] == 'Female' %}selected{% endif %}>Female</option>
+        <option value="Other" {% if patient['gender'] == 'Other' %}selected{% endif %}>Other</option>
+    </select>
+    <input type="text" name="contact" value="{{ patient['contact'] }}">
+    <input type="text" name="disease" value="{{ patient['disease'] }}">
+    <button type="submit">Update Patient</button>
+</form>
+{% endblock %}

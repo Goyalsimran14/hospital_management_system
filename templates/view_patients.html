@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>View Patients</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>All Patients</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Condition</th>
+            </tr>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient[0] }}</td>
+                <td>{{ patient[1] }}</td>
+                <td>{{ patient[2] }}</td>
+                <td>{{ patient[3] }}</td>
+                <td>{{ patient[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Patients</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Patient List</h2>
+    <table>
+      <tr>
+        <th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Contact</th><th>Email</th>
+      </tr>
+      {% for patient in patients %}
+      <tr>
+        <td>{{ patient['id'] }}</td>
+        <td>{{ patient['name'] }}</td>
+        <td>{{ patient['age'] }}</td>
+        <td>{{ patient['gender'] }}</td>
+        <td>{{ patient['contact'] }}</td>
+        <td>{{ patient['email'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>

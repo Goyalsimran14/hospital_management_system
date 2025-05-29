@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Our Hospital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🏥 My Hospital</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                <li><a href="{{ url_for('main.home') }}#contact">Contact Us</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Our Hospital</h1>
+        <p>We care about your health and well-being. Schedule appointments, view your prescriptions, and more!</p>
+        <div class="cta-buttons">
+            <a href="/login" class="btn">👤 Login</a>
+            <a href="/register" class="btn">📝 Register</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@hospital.com</p>
+        <p>Phone: +91-1234567890</p>
+        <p>Address: 123, Health Street, Wellness City</p>
+    </section>
+</body>
+</html>

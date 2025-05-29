@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Patients List</h2>
+    <a href="{{ url_for('add_patient') }}" class="btn">Add Patient</a>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Contact</th></tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.gender }}</td>
+                <td>{{ patient.contact }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="5">No patients found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn">Back to Home</a>
+</div>
+</body>
+</html>
